@@ -11,23 +11,22 @@ function changeSize(size) {
         const div = document.createElement('div');
         div.classList.add('square');
         drawbox.appendChild(div);
-        div.style.setProperty('grid-template-columns', 'repeat(' + size + ', 1fr)');
-        div.style.setProperty('grid-template-rows', 'repeat(' + size + ', 1fr)');
+        document.querySelector('.square').style.setProperty('grid-template-columns', 'repeat(' + size + ', 1fr)');
+        document.querySelector('.square').style.setProperty('grid-template-rows', 'repeat(' + size + ', 1fr)');
     }
 }
-
-const squares = document.querySelectorAll('.square');
-
 
 
 function changeColor(color) {
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
             square.style.backgroundColor = color;
+
         });
     });
 }
 
+changeSize(23);
+const squares = document.querySelectorAll('.square');
 changeColor('black');
 
-changeSize(23);
